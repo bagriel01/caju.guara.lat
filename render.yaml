@@ -4,8 +4,9 @@ services:
     runtime: static
     buildCommand: ""
     staticPublishPath: .
+    domains:
+      - caju.guara.lat
     routes:
       - type: redirect
         source: /pt
         destination: /caju_landing_page_pt_br_quote_preserved/code.html
-        permanent: false
