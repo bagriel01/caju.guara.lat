@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: caju-guara-lat
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    routes:
+      - type: redirect
+        source: /pt
+        destination: /caju_landing_page_pt_br_quote_preserved/code.html
+        permanent: false
