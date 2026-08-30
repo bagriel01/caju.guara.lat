@@ -3,11 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=/en/">
   <title>Caju</title>
   <link rel="canonical" href="/en/">
+  <script>
+    (function () {
+      const isRootPage = ['/', '/index.html'].includes(window.location.pathname) || window.location.pathname.endsWith('/index.html');
+      if (!isRootPage) return;
+
+      const languages = navigator.languages || [navigator.language || 'en'];
+      const preferred = languages.map((lang) => lang.toLowerCase()).join(',');
+      const isPortuguese = /(^|-)pt($|-|,)/.test(preferred);
+      const target = isPortuguese ? '/br/' : '/en/';
+
+      if (window.location.pathname !== target) {
+        window.location.replace(target);
+      }
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/en/">
+  </noscript>
 </head>
-<body>
-  <p>Redirecting to <a href="/en/">Caju's English site</a>.</p>
-</body>
+<body></body>
 </html>
